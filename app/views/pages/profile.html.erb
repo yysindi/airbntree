@@ -1,44 +1,50 @@
 
-<h2>My Bookings</h2>
-
-<% current_user.bookings.each do |booking| %>
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
-      <div class="col mb-4">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= booking.name %></h5>
-            <p class="card-text"><%= booking.descrption %></p>
-            <p class="card-text">Check in: <%= booking.check_in %></p>
-            <p class="card-text">Check out: <%= booking.check_out %></p>
-          </div>
-          <div class="card-footer">
-            <p>Total price: <%= booking.total_price %>£</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<h2>My treehouses</h2>
-<% current_user.treehouses.each do |treehouse| %>
+<div class="container">
+  <h2>My Bookings</h2>
+  <% current_user.bookings.each do |booking| %>
     <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
-      <div class="col mb-4">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= treehouse.name %></h5>
-            <p class="card-text"><%= treehouse.descrption %></p>
-            <p class="card-text">Price per night: <%= treehouse.price %>£</p>
-          </div>
-          <div class="card-footer">
-            <p>Add Link to Edit and delete!!</p>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= booking.name %></h5>
+              <p class="card-text"><%= booking.description %></p>
+              <p class="card-text">Check in: <%= booking.check_in %></p>
+              <p class="card-text">Check out: <%= booking.check_out %></p>
+            </div>
+            <div class="card-footer">
+              <p>Total price: <%= booking.total_price %>£</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  <% end %>
+  <h2>My treehouses</h2>
+    <div class="row">
+      <% current_user.treehouses.each do |treehouse| %>
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <% if treehouse.photo.attached? %>
+                <%= cl_image_tag treehouse.photo.key, class:"card-img-top" %>
+              <% else %>
+                <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"card-img-top" %>
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= treehouse.name %></h5>
+                <p class="card-text"><%= treehouse.description %></p>
+                <p class="card-text">Price per night: <%= treehouse.price %>£</p>
+              </div>
+                <div class="card-footer">
+                  <p>Add Link to Edit and delete!</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </div>
-<% end %>
+<div>

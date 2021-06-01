@@ -12,6 +12,7 @@
           <%= f.input :price,
               required: true %>
           <%= f.input :img %>
+          <%= f.input :photo, as: :file %>
           <%= f.button :submit, "Upload your treehouse", class: 'btn btn-primary btn-md'%>
         <% end %>
       </div>
