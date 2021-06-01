@@ -1,13 +1,20 @@
 // Specific CSS for your home-page
 
-// .d-block {
-//   max-height: 800px;
-//   max-width: 600px;
-// }
+.grid-container{
+  width: 98vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 740px){
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
 .main {
   padding-left: 30px;
+  margin-bottom: 40px;
   h1 {
-  font-size: 5.5em;
+  font-size: 5.3em;
   font-weight: bold;
   padding-top: 150px;
   }
@@ -25,4 +32,10 @@
   .btn {
     border-radius: 38px;
   }
+}
+.carousel {
+  width: 95%;
+}
+.carousel-inner {
+  text-align: center;
 }

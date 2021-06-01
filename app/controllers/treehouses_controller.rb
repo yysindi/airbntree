@@ -1,5 +1,5 @@
 class TreehousesController < ApplicationController
-  before_ action :find_id, only: [:edit, :show, :update, :destroy]
+  before_action :set_treehouse, only: [:edit, :show, :update, :destroy]
 
   def new
     @treehouse = Treehouse.new
@@ -10,7 +10,8 @@ class TreehousesController < ApplicationController
   end
 
   def create
-    @treehouse = Treehouse.new(treehouse_params)
+    @treehouse = Treehouse.new(tree_params)
+    @treehouse.user = current_user
     if @treehouse.save
       redirect_to treehouses_path
     else
@@ -30,17 +31,17 @@ class TreehousesController < ApplicationController
   end
 
   def update
-    @treehouse.update[treehouse_params]
+    @treehouse.update(tree_params)
     redirect_to treehouse_path(@treehouse)
   end
 
   private
 
-  def treehouse_params
-    params.require[:treehouse].permit(:name, :price, :description, :img, :location)
+  def tree_params
+    params.require(:treehouse).permit(:name, :price, :description, :img, :location)
   end
 
-  def find_id
+  def set_treehouse
     @treehouse = Treehouse.find(params[:id])
   end
 end
