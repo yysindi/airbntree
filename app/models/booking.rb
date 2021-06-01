@@ -1,3 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :treehouse, :user
+  belongs_to :treehouse
+  belongs_to :user
 end
