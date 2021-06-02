@@ -1,16 +1,38 @@
 <div class="container">
-  <h1 class="m-4">Treehouses</h1>
-<div style="display: flex; justify-content: flex-start; flex-wrap: wrap; ">
+  <h1 class="title mt-3">Treehouses</h1>
+  <div id="carouselExampleControls" class="carousel-width slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item size active" data-interval="6000">
+            <%= image_tag "treehouse-landscape-3.jpg", width: "100%" %>
+          </div>
+          <div class="carousel-item size" data-interval="6000">
+            <%= image_tag "treehouse-landscape-2.jpg", width: "100%" %>
+            <div class="carousel-content">
+              <h1>Only the most luxorious</h1>
+              <h1>trees await you</h1>
+            </div>
+          </div>
+          <div class="carousel-item size" data-interval="6000">
+            <%= image_tag "treehouse-landscape.jpg", width: "100%" %>
+          </div>
+        </div>
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; ">
 <% @treehouses.each do |treehouse| %>
-<div class="card m-3" style="width: 520px; height: 360px; background-color: white; border-radius: 4px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);">
-  <img src="<%= treehouse.img %>" alt="" style="width: 100%; height: 240px">
-  <div class="pl-2">
-    <h4 style="font-weight: bold"><%= treehouse.name %></h4>
+<%= link_to treehouse_path(treehouse) do %>
+<div class="card margin-zero" style="width: 520px; height: 400px; background-color: white; border-radius: 4px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);">
+  <%= cl_image_tag treehouse.photo.key, height: 240 %>
+  <div class="pl-2 pt-2 card-text hover-underline" style="color:black; text-decoration: none;">
+    <div style="display: flex; justify-content: space-between;">
+      <h4 style="font-weight: bold"><%= treehouse.name %></h4>
+      <p class="pr-2"><i class="fas fa-map-marker-alt">&nbsp;</i><%= treehouse.location %></p>
+    </div>
     <p><%= treehouse.description %></p>
-    <p>£<%= treehouse.price %></p>
+    <p id="price">£<%= treehouse.price %></p>
   </div>
 </div>
 <% end %>
+<% end %>
+</div>
 </div>
 </div>
 
