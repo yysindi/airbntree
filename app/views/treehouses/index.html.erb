@@ -26,8 +26,8 @@
       <h4 style="font-weight: bold"><%= treehouse.name %></h4>
       <p class="pr-2"><i class="fas fa-map-marker-alt">&nbsp;</i><%= treehouse.location %></p>
     </div>
-    <p><%= treehouse.description %></p>
-    <p id="price">£<%= treehouse.price %></p>
+    <div><%= treehouse.description.truncate(100) %></div>
+    <div id="price">£<%= treehouse.price %></div>
   </div>
 </div>
 <% end %>
