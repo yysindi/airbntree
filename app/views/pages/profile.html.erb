@@ -42,7 +42,7 @@
             <h5 class="card-title"><%= link_to treehouse.name, treehouse_path(treehouse.id) %></h5>
             
             <p class="card-text"><%= treehouse.description %></p>
-            <p class="card-text price">Price ner Night: <%= treehouse.price %>£</p>
+            <p class="card-text price">Price ner Night: £<%= treehouse.price %></p>
                 <div class="card-footer">
                   <%= link_to "Edit", edit_treehouse_path(treehouse.id), class:"btn btn-light" %>
                   <%= link_to "Delete", treehouse_path(treehouse), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-outline-light" %>
