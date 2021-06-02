@@ -1,48 +1,45 @@
 
 <div class="container">
   <h2>My Bookings</h2>
+  <p>Future bookings. Enjoy your stay.</p>
   <% current_user.bookings.each do |booking| %>
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-3">
-        <div class="col mb-4">
-          <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><%= booking.name %></h5>
-              <p class="card-text"><%= booking.description %></p>
-              <p class="card-text">Check in: <%= booking.check_in %></p>
-              <p class="card-text">Check out: <%= booking.check_out %></p>
-            </div>
-            <div class="card-footer">
-              <p>Total price: <%= booking.total_price %>£</p>
-            </div>
-          </div>
+    <div class="card" style="width: 18rem;">
+      <% if booking.treehouse.photo.attached? %>
+        <%= cl_image_tag booking.treehouse.photo.key, class:"card-img-top" %>
+      <% else %>
+        <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"card-img-top" %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.treehouse.name %></h5>
+        <p class="card-text"><%= booking.check_in %></p>
+        <p class="card-text"><%= booking.check_out %></p>
+        <p class="card-text price">Total price: <%= booking.total_price %>£</p>
+        <div class="card-footer">
+          <%= link_to "Ammend", "#", class:"btn btn-light" %>
+          <%= link_to "Cancel", "#", method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-outline-light" %>
         </div>
       </div>
     </div>
   <% end %>
   <h2>My treehouses</h2>
+  <p>Your listed treehouses. Easily view, edit, or delete the treehouse.</p>
     <div class="row">
       <% current_user.treehouses.each do |treehouse| %>
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <% if treehouse.photo.attached? %>
-                <%= cl_image_tag treehouse.photo.key, class:"card-img-top" %>
-              <% else %>
-                <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"card-img-top" %>
-              <% end %>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><%= treehouse.name %></h5>
-                <p class="card-text"><%= treehouse.description %></p>
-                <p class="card-text">Price per night: <%= treehouse.price %>£</p>
-              </div>
+        <div class="card" style="width: 18rem;">
+          <% if treehouse.photo.attached? %>
+            <%= cl_image_tag treehouse.photo.key, class:"card-img-top" %>
+          <% else %>
+            <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to treehouse.name, treehouse_path(treehouse.id) %></h5>
+            
+            <p class="card-text"><%= treehouse.description %></p>
+            <p class="card-text price">Price ner Night: <%= treehouse.price %>£</p>
                 <div class="card-footer">
-                  <p>Add Link to Edit and delete!</p>
+                  <%= link_to "Edit", edit_treehouse_path(treehouse.id), class:"btn btn-light" %>
+                  <%= link_to "Delete", treehouse_path(treehouse), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-outline-light" %>
                 </div>
-            </div>
           </div>
         </div>
       <% end %>
