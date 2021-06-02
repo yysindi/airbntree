@@ -5,11 +5,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-@media screen and (max-width: 740px){
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
+
 .main {
   padding-left: 30px;
   margin-bottom: 40px;
@@ -38,4 +34,18 @@
 }
 .carousel-inner {
   text-align: center;
+}
+
+@media screen and (max-width: 770px){
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .top-img {
+    display: none;
+  }
+  .main {
+    h1 {
+    font-size: 3.3em;
+  }
+}
 }
