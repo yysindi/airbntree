@@ -1,7 +1,17 @@
-<h1>Happy</h1>
 
-<p><%= @treehouse.name %></p>
-<p><%= @treehouse.name %></p>
-<p><%= @treehouse.name %></p>
-<p><%= @treehouse.name %></p>
-
+<div class="container">
+ <div class="row  my-3 p-3 rounded shadow-sm">
+  <div class="col-12 col-md-8 bg-light">
+      <h1><%= @treehouse.name %></h1>
+      <h1> <%=@treehouse.description %></h1>
+      <h1><%= @treehouse.price %></h1>
+      <h1><%= @treehouse.location %></h1>
+  </div>
+  <div class="col-6 col-md-4 bg-light">
+    <%= @treehouse.img %>
+  </div>
+  <div class="row  my-3 p-3 rounded shadow-sm">
+    
+  </div>
+</div>
+</div>
