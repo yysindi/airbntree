@@ -6,7 +6,11 @@ class TreehousesController < ApplicationController
   end
 
   def index
-    @treehouses = Treehouse.all
+    if params[:query].present?
+      @treehouses = Treehouse.search_by_location_and_description(params[:query])
+    else
+      @treehouses = Treehouse.all
+    end
   end
 
   def create
