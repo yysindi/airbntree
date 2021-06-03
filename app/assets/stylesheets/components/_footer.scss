@@ -1,0 +1,21 @@
+
+.footer-links {
+ a {
+   text-decoration: none;
+   color:#e49795;
+   font-size: 40px;
+   transition: all .2s ease-in-out;
+ }
+
+ a:hover {
+  text-decoration: none;
+  color:#9c5d5b;
+  transform: scale(1.1);
+  box-shadow: 0 4px 2px -2px gray;
+ }
+}
+
+.footer-flex {
+  flex-direction: column;
+  align-items: center;
+}
