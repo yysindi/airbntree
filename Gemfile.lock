@@ -271,7 +271,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 4.1)
-  rails (~> 6.0.3, >= 6.0.3.7)
+  rails (~> 6.0.3)
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
