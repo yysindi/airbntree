@@ -1,7 +1,22 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "tree2.png" %> AirB 'n' Tree
     <% end %>
+
+  <% if params[:action] == 'index' %>
+      <%= form_tag treehouses_path, method: :get, class: "search-form" do %>
+      <%= text_field_tag :query,
+    params[:query],
+    class: "form-control search-design",
+    placeholder: "Location..."
+  %>
+   <%= button_tag(type: "submit", class: "btn btn-default") do %>
+    <i class="fas fa-search"></i>
+  <% end %>
+<% end %>
+
+<% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
