@@ -20,3 +20,13 @@
 .dropdown-menu {
   background-color: rgb(255, 255, 255);
 }
+
+.align-nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.btn-danger {
+  background-color: $coral;
+  border: solid 1px white;
+ }
