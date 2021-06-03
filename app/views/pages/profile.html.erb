@@ -14,7 +14,7 @@
         <h5 class="card-title"><%= booking.treehouse.name %></h5>
         <p class="card-text"> <b>Check in:</b>  <%= booking.check_in %></p>
         <p class="card-text"><b>Check out: </b> <%= booking.check_out %></p>
-        <p class="card-text price"><b>Total price:</b>  <%= booking.total_price %>£</p>
+        <p class="card-text price"><b>Total price:</b>  £<%= (booking.treehouse.price * (booking.check_out-booking.check_in)).to_i %></p>
         <div class="card-footer footer-pink">
 
         <%= link_to treehouse_path(booking.treehouse.id) do %>
@@ -27,7 +27,7 @@
     </div>
     <% end %>
   </div>
-  
+
   <h2>My Treehouses</h2>
 
   <p>Your listed treehouses. Easily view, edit, or delete the treehouse.</p>
