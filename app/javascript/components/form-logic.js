@@ -19,6 +19,7 @@ const formLogic = () => {
     const finalPrice = (out - cIn) * pricePerNight;
     // totalPrice.innerText = "Total Price: £ " + finalPrice;
     totalP.value =  finalPrice;
+    totalPrice.innerHTML =  finalPrice;
   });
 
 
