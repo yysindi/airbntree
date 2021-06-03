@@ -1,9 +1,4 @@
 
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#  oy_all
-
-
 # p 'Initialising'
 # user_1 = User.create(name: 'Jared', email: 'jared@test.com', owner: true, password: '123456')
 # user_2 = User.create(name: 'Keith', email: 'keith@test.com', owner: false, password: '123456')
@@ -24,9 +19,6 @@
 # p 'Completed'
 #  Character.create(name: 'Luke', movie: movies.first)
 # p 'Clearing database'
-# Booking.destroy_all
-# Treehouse.destroy_all
-# User.destr
 
 
 require "open-uri"
@@ -36,13 +28,13 @@ p 'Clearing database'
 Booking.destroy_all
 Treehouse.destroy_all
 User.destroy_all
-puts 'creating users and treehouses'
+p 'creating users and treehouses'
 
 user_1 = User.create(name: 'Jared', email: 'jared@test.com', owner: true, password: '123456')
 user_2 = User.create(name: 'Keith', email: 'keith@test.com', owner: true, password: '123456')
 
 
-name = ["The Purple Treehouse", "Treehouse With a View", "Magical Treehouse", "The Urban Gungle Treehouse", "My Perfect Treehouse", "Happy Place", "Where the Wukies Are"]
+name = ["The Purple Treehouse", "Treehouse With a View", "Magical Treehouse", "The Urban Jungle Treehouse", "My Perfect Treehouse", "Happy Place", "Where the Wukies Are"]
 treehouse_photos =
 
 ['https://res.cloudinary.com/ellamor/image/upload/w_500,c_scale/th3_axvlty.jpg',
@@ -54,14 +46,6 @@ treehouse_photos =
 'https://res.cloudinary.com/ellamor/image/upload/w_500,c_scale/th7_flowym.jpg'
 ]
 
-# ['https://res.cloudinary.com/ellamor/image/upload/v1622631346/th3_axvlty.jpg',
-# 'https://res.cloudinary.com/ellamor/image/upload/v1622631346/th2_y35noh.jpg',
-# 'https://res.cloudinary.com/ellamor/image/upload/v1622631346/th_eezgo9.jpg',
-# 'https://res.cloudinary.com/ellamor/image/upload/v1622631346/th4_zxpqok.jpg',
-# 'https://res.cloudinary.com/ellamor/image/upload/v1622646742/th6_wb4s8u.jpg',
-# 'https://res.cloudinary.com/ellamor/image/upload/v1622646775/th5_gh9hon.jpg',
-# 'https://res.cloudinary.com/ellamor/image/upload/v1622646813/th7_flowym.jpg'
-# ]
 treehouse_filenames = ['th3_axvlty.jpg', 'th2_y35noh.jpg','th_eezgo9.jpg', 'th4_zxpqok.jpg', 'v1622646742/th6_wb4s8u.jpg', 'th5_gh9hon.jpg', '/th7_flowym.jpg']
 treehouse_description = 
 [

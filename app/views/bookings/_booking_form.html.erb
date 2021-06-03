@@ -1,6 +1,8 @@
 <%= simple_form_for([ treehouse, booking ]) do |f| %>
-          <%= f.input :check_in %>
-          <%= f.input :check_out %>
-          <%= f.input :total_price, input_html: {value: (treehouse.price)} %>
+          <%= f.input :check_in, as: :date, html5: true, input_html: {value: Date.today} %>
+          <%= f.input :check_out, as: :date, html5: true, input_html: {value: Date.today} %>
+          <%= f.input :total_price, :disabled => true %>
+          <p id="price-p-night"><%= (treehouse.price) %></p>
+          <%# <p id="total-price">Total Price: £0 </p> %>
           <%= f.button :submit, "Book Your Stay", class: 'btn btn-primary btn-md'%>
 <% end %>
