@@ -3,9 +3,8 @@ class PagesController < ApplicationController
   end
 
   def profile
-    if current_user
-      @bookings = current_user.bookings
-      @treehouses = current_user.treehouses
-    end
+    @treehouse = current_user.treehouses.ids
+    @offers = Booking.where(treehouse_id: @treehouse)
   end
+
 end
