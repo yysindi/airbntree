@@ -1,0 +1,20 @@
+<div class="fullpage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6 offset-md-3" id="formbox">
+        <%= simple_form_for(@treehouse) do |f| %>
+          <%= f.input :name,
+              required: true %>
+          <%= f.input :description,
+              required: true %>
+          <%= f.input :location,
+              required: true %>
+          <%= f.input :price,
+              required: true %>
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit, "Upload your treehouse", class: 'btn btn-primary btn-md'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

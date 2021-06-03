@@ -13,7 +13,7 @@ class TreehousesController < ApplicationController
     @treehouse = Treehouse.new(tree_params)
     @treehouse.user = current_user
     if @treehouse.save
-      redirect_to treehouses_path
+      redirect_to treehouse_path(@treehouse.id)
     else
       render :new
     end

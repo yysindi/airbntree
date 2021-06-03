@@ -1,0 +1,49 @@
+.size {
+  height: 320px;
+  padding-bottom: 1px;
+}
+
+.carousel-width {
+  width: 100%;
+}
+
+.margin-zero {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+a:hover {
+      text-decoration: none;
+}
+
+
+.carousel-content {
+  position: absolute;
+  bottom: 30%;
+  left: 20%;
+
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  h1 {
+    font-size: 60px;
+  }
+}
+
+.card-text {
+  #price {
+    position: absolute;
+    bottom: 2px;
+    right: 12px;
+    font-weight: bold;
+  }
+
+  .margin-zero img {
+    object-fit: cover;
+  }
+
+  // #location {
+  //   position: absolute;
+  //   right: 12px;
+  //   top: 2px
+  // }
+}

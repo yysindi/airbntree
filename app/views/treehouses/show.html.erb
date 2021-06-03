@@ -1,9 +1,21 @@
-<h1>hello there everyone </h1>
 
-<div class="container p-3">
-  <p><%= @treehouse.name %></p>
-  <p><%= @treehouse.price %></p>
-  <p><%= @treehouse.location %></p>
-  <p><%= @treehouse.description %></p>
+<div class="container">
+  <div class="heading">
+    <h1><%= @treehouse.name %></h1>
+  </div>
+  <div class="row show-row">
+    <div class="col-5">
+        <p><%= @treehouse.description %></p>
+        <p><b>Location:</b> <%= @treehouse.location %></p>
+        <p><b>Price per night: </b>£<%= @treehouse.price %></p>
+        <%= link_to "Book", new_treehouse_booking_path(@treehouse.id), class:"btn btn-dark" %>
+      </div>
+      <div class="col-5 col-img">
+        <% if @treehouse.photo.attached? %>
+          <%= cl_image_tag @treehouse.photo.key, class:"show-img" %>
+        <% else %>
+          <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"show-img" %>
+        <% end %>
+    </div>
+  </div>
 </div>
-

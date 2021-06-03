@@ -19,6 +19,17 @@
   }
   a {
     text-decoration: none;
+  }
+}
+
+.card-img-top {
+  max-height: 195px;
+  object-fit: cover;
+}
+
+.card-title {
+  background-color: $coral;
+  a {
     color: $black;
   }
 }
@@ -27,4 +38,10 @@
   background-color: $light-green;
   display: flex;
   justify-content: space-between;
+  a {
+    color: $black;
+  }
+}
+.footer-pink {
+  background-color: $pink;
 }
