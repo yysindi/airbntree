@@ -9,13 +9,19 @@
         <p><b>Location:</b> <%= @treehouse.location %></p>
         <p><b>Price per night: </b>£<%= @treehouse.price %></p>
         <%= link_to "Book", new_treehouse_booking_path(@treehouse.id), class:"btn btn-dark" %>
-      </div>
-      <div class="col-5 col-img">
-        <% if @treehouse.photo.attached? %>
-          <%= cl_image_tag @treehouse.photo.key, class:"show-img" %>
-        <% else %>
-          <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"show-img" %>
-        <% end %>
+    </div>
+    <div class="col-5 col-img">
+      <% if @treehouse.photo.attached? %>
+        <%= cl_image_tag @treehouse.photo.key, class:"show-img" %>
+      <% else %>
+        <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"show-img" %>
+      <% end %>
+    </div>
+    <div class="container my-2 p-3 d-flex justify-content-center">
+    <div id="map"
+      style="width: 80%; height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
 </div>

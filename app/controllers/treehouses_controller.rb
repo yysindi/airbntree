@@ -32,6 +32,11 @@ class TreehousesController < ApplicationController
   end
 
   def show
+    @markers =
+      [{
+        lat: @treehouse.latitude,
+        lng: @treehouse.longitude
+      }]
   end
 
   def update

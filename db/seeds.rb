@@ -61,7 +61,7 @@ counter = 0
 
 4.times do
   treehouse_file = URI.open("#{treehouse_photos[counter]}")
-  treehouse = Treehouse.new(name: "#{name[counter]}", description: treehouse_description[counter], price: rand(70..300), location: Faker::Books::Dune.planet  )
+  treehouse = Treehouse.new(name: "#{name[counter]}", description: treehouse_description[counter], price: rand(70..300), location: Faker::Address.city )
   treehouse.user = user_1
   treehouse.photo.attach(io: treehouse_file, filename: "#{treehouse_filenames[counter]}", content_type: 'image/jpg')
   treehouse.save
@@ -72,7 +72,7 @@ counter_two = 4
 
 3.times do
   treehouse_file = URI.open("#{treehouse_photos[counter_two]}")
-  treehouse = Treehouse.new(name: "#{name[counter_two]}", description: treehouse_description[counter_two], price: rand(70..300), location: Faker::Books::Dune.planet  )
+  treehouse = Treehouse.new(name: "#{name[counter_two]}", description: treehouse_description[counter_two], price: rand(70..300), location: Faker::Address.city )
   treehouse.user = user_2
   treehouse.photo.attach(io: treehouse_file, filename: "#{treehouse_filenames[counter_two]}", content_type: 'image/jpg')
   treehouse.save
