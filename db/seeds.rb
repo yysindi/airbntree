@@ -50,12 +50,12 @@ treehouse_filenames = ['th3_axvlty.jpg', 'th2_y35noh.jpg','th_eezgo9.jpg', 'th4_
 treehouse_description = 
 [
   'This detached treehouse is set in an enviable rural location and is ideal for couples, with cosy wood burner, private garden and fantastic walking routes.',
-  'a stunning treehouse, nestled in the Hills on an 84 acre farm, offers a magical experience where you can reconnect with nature.',
-  'Make social distancing a pleasure with this lovely streehouse. Set on a working farm with fantastic views of the Campsie, Fintry and Trossachs hills, this treehouse provides a quality stay',
-  'Feel straight at home at our one of a kind treehouse, with a unique style and great views',
-  'Charming and rustic tree house with 3 bedrooms and 2 bathrooms. Beautifully decorated and in the second floor of the tree.',
-  'Get the wood-burner going inside, run yourself a bath out on the deck and soak in the peace of the treetops and the south west countryside.',
-  'This is a little bit cosier than your normal nest in the trees. From the king-size bed to the sofa by the wood burner and the incredible bathtub out on the deck, Dabinett Treehouse is a chic, stylish haven.'
+  'a stunning treehouse, nestled in the Hills on an 84 acre farm, offers a magical experience where you can reconnect with nature and all its glory.',
+  'Make social distancing a pleasure with this lovely streehouse. Set on a working farm with fantastic views of the Campsie, Fintry and Trossachs hills.',
+  'Feel straight at home at our one of a kind treehouse, with a unique style and great views of the entire surrounding areas. Just bring a suitcase and join us.',
+  'Charming and rustic tree house with 3 bedrooms and 2 bathrooms. Beautifully decorated and in the second floor of the tree, a lovely grand window.',
+  'Get the wood-burner going inside, run yourself a bath out on the deck and soak in the peace of the treetops and of the south west countryside.',
+  'This is a little bit cosier than your normal nest in the trees. From the king-size bed to the sofa by the wood burner and the incredible bathtub.'
 ]
 
 treehouse_locations = [ 'Yorkshire Dales', 'New Forest', 'Somerset', 'Brighton', 'Brittany', 'Ardennes Forest', 'Mont Saint Michel'
