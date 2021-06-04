@@ -4,11 +4,12 @@
     <h1><%= @treehouse.name %></h1>
   </div>
   <div class="row show-row">
-    <div class="col-5">
+    <div class="col-5 col-text">
         <p><%= @treehouse.description %></p>
-        <p><b>Location:</b> <%= @treehouse.location %></p>
+        <p><b><i class="fa-solid fa-location"></i></b> <%= @treehouse.location %></p>
         <p><b>Price per night: </b>£<%= @treehouse.price %></p>
-        <%= link_to "Book", new_treehouse_booking_path(@treehouse.id), class:"btn btn-dark" %>
+        <%= link_to "Book", new_treehouse_booking_path(@treehouse.id), class:"btn btn-success" %>
+        <%= link_to "View More", treehouses_path, class:"btn btn-outline-dark" %>
     </div>
     <div class="col-5 col-img">
       <% if @treehouse.photo.attached? %>
@@ -16,8 +17,8 @@
       <% else %>
         <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"show-img" %>
       <% end %>
-    </div>
-    <div class="container my-2 p-3 d-flex justify-content-center">
+  </div>
+    <div class="container my-1 p-3 d-flex justify-content-center">
     <div id="map"
       style="width: 80%; height: 400px;"
       data-markers="<%= @markers.to_json %>"
