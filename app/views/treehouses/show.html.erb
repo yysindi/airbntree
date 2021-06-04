@@ -1,15 +1,26 @@
 
 <div class="container">
   <div class="heading">
+  
     <h1><%= @treehouse.name %></h1>
   </div>
   <div class="row show-row">
     <div class="col-5 col-text">
-        <p><%= @treehouse.description %></p>
-        <p><b><i class="fa-solid fa-location"></i></b> <%= @treehouse.location %></p>
-        <p><b>Price per night: </b>£<%= @treehouse.price %></p>
-        <%= link_to "Book", new_treehouse_booking_path(@treehouse.id), class:"btn btn-success" %>
-        <%= link_to "View More", treehouses_path, class:"btn btn-outline-dark" %>
+      <p><%= @treehouse.description %></p>
+      <p><%= icon('fas', 'map-marker-alt') %> <%= @treehouse.location %></p>
+      <p><b><%= icon('fas', 'tag') %> Price per night: </b>£<%= @treehouse.price %></p>
+      <%= simple_form_for([ @treehouse, @booking ]) do |f| %>
+      <div class="book-form">
+        <%= f.input :check_in, as: :date, html5: true, input_html: {value: Date.today} %>
+        <%= f.input :check_out, as: :date, html5: true, input_html: {value: Date.today} %>
+      </div>
+      <div class="book-form">
+        <%= f.input :total_price, as: :hidden %>
+        <p id="price-p-night"><%= (@treehouse.price) %></p>
+        <p class="tPrice">Total Price: £<span id="total-price"></span> </p>
+        <%= f.button :submit, "Book Your Stay", class: 'btn btn-success'%>
+        </div>
+      <% end %>
     </div>
     <div class="col-5 col-img">
       <% if @treehouse.photo.attached? %>
