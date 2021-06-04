@@ -37,6 +37,7 @@ class TreehousesController < ApplicationController
         lat: @treehouse.latitude,
         lng: @treehouse.longitude
       }]
+    @booking = Booking.new
   end
 
   def update
