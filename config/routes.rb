@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Notifications::Engine => "/notifications"
   get 'bookings/create'
   devise_for :users
   root to: 'pages#home'
