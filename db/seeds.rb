@@ -57,11 +57,14 @@ treehouse_description =
   'Get the wood-burner going inside, run yourself a bath out on the deck and soak in the peace of the treetops and the south west countryside.',
   'This is a little bit cosier than your normal nest in the trees. From the king-size bed to the sofa by the wood burner and the incredible bathtub out on the deck, Dabinett Treehouse is a chic, stylish haven.'
 ]
+
+treehouse_locations = [ 'Yorkshire Dales', 'New Forest', 'Somerset', 'Brighton', 'Brittany', 'Ardennes Forest', 'Mont Saint Michel'
+]
 counter = 0
 
 4.times do
   treehouse_file = URI.open("#{treehouse_photos[counter]}")
-  treehouse = Treehouse.new(name: "#{name[counter]}", description: treehouse_description[counter], price: rand(70..300), location: Faker::Address.city )
+  treehouse = Treehouse.new(name: "#{name[counter]}", description: treehouse_description[counter], price: rand(70..300), location: treehouse_locations[counter] )
   treehouse.user = user_1
   treehouse.photo.attach(io: treehouse_file, filename: "#{treehouse_filenames[counter]}", content_type: 'image/jpg')
   treehouse.save
@@ -72,7 +75,7 @@ counter_two = 4
 
 3.times do
   treehouse_file = URI.open("#{treehouse_photos[counter_two]}")
-  treehouse = Treehouse.new(name: "#{name[counter_two]}", description: treehouse_description[counter_two], price: rand(70..300), location: Faker::Address.city )
+  treehouse = Treehouse.new(name: "#{name[counter_two]}", description: treehouse_description[counter_two], price: rand(70..300), location: treehouse_locations[counter_two] )
   treehouse.user = user_2
   treehouse.photo.attach(io: treehouse_file, filename: "#{treehouse_filenames[counter_two]}", content_type: 'image/jpg')
   treehouse.save
