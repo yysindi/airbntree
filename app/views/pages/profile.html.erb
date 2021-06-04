@@ -6,25 +6,23 @@
     <p>Here are your offers</p>
     <div class="row">
       <% @offers.each do |offer| %>
-      <div class="card" style="width: 19rem;">
-        <% if offer.treehouse.photo.attached? %>
-          <%= cl_image_tag offer.treehouse.photo.key, class:"card-img-top" %>
-        <% else %>
-          <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"card-img-top" %>
-        <% end %>
-        <div class="card-body">
-          <h5 class="card-title"><%= offer.treehouse.name %></h5>
-          <p class="card-text"> <b>Check in:</b>  <%= offer.check_in %></p>
-          <p class="card-text"><b>Check out: </b> <%= offer.check_out %></p>
-          <p class="card-text price"><b>Total price: £</b>  <%= offer.total_price %></p>
-          <div class="card-footer">
-          <%= link_to "Accept", treehouse_path(offer.treehouse), method: :delete, class: "btn btn-light" %>
-          <%= link_to "Reject", treehouses_path, class: "btn btn-outline-light" %>
-          </div>
-        <div>
 
-            <%# <%= link_to "Ammend", "#", class:"btn btn-light" %>
-            <%# <%= link_to "Cancel", "#", method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-outline-light" %>
+        <div class="card" style="width: 19rem;">
+          <% if offer.treehouse.photo.attached? %>
+            <%= cl_image_tag offer.treehouse.photo.key, class:"card-img-top" %>
+          <% else %>
+            <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= offer.treehouse.name %></h5>
+              <p class="card-text"> <b>Check in:</b>  <%= offer.check_in %></p>
+              <p class="card-text"><b>Check out: </b> <%= offer.check_out %></p>
+              <p class="card-text price"><b>Total price:</b>  £ <%= offer.total_price %></p>
+            <div class="card-footer">
+              <%= link_to "Accept", treehouse_path(offer.treehouse), method: :delete, class: "btn btn-light" %>
+              <%= link_to "Reject", treehouses_path, class: "btn btn-outline-light" %>
+            </div>
+          <div>
           </div>
         </div>
       </div>
