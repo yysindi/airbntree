@@ -27,7 +27,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <%= link_to pluralize(Treehouse.where(id: current_user.bookings.ids).count, 'offer'), profile_path, class: "btn btn-custom" %>
+          <%= link_to pluralize(Booking.where(treehouse_id: current_user.treehouses.ids).count, 'offer'), profile_path, class: "btn btn-custom" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
