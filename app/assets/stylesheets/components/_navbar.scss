@@ -23,7 +23,20 @@
   background-color: rgb(255, 255, 255);
 }
 
+
+.btn-custom {
+  background-color: $coral;
+  border: solid 1px white;
+  color: white;
+  }
+  .btn-custom:hover {
+    background-color: #d08a88;
+    border: solid 1px white;
+    color: white;
+  }
+
 .navbar-brand {
 font-family: 'Montserrat', sans-serif;
 }
+
 

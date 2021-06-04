@@ -3,20 +3,17 @@
     <div class="main">
       <h1><span class="pink-highlight">Discover</span> the perfect <span class="green-highlight">treehouse</span></h1>
       <h2>A curated list of the coziest spots around the world</h2>
-      <div class="d-flex">
-      <a href="/treehouses" class="btn btn-outline-dark">Let's explore <%= icon('fas', 'arrow-right') %></a>
-         <%= form_tag treehouses_path, method: :get, class: "search-form ml-2" do %>
+         <%= form_tag treehouses_path, method: :get, class: "search-form" do %>
       <%= text_field_tag :query,
     params[:query],
     class: "form-control search-design-home",
     placeholder: "Location..."
   %>
    <%= button_tag(type: "submit", class: "btn btn-default") do %>
-    <i class="fas fa-search"></i>
+    <a href="/treehouses" class="btn btn-outline-dark">Let's explore <%= icon('fas', 'arrow-right') %></a>
   <% end %>
 <% end %>
 </div>
-    </div>
     <div class="top-img">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -32,4 +29,4 @@
         </div>
       </div>
     </div>
-   </div>
+</div>
