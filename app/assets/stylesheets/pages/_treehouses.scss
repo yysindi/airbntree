@@ -13,10 +13,13 @@
 }
 
 a:hover {
-      text-decoration: none;
+  text-decoration: none;
 }
 
-
+.carousel-inner {
+  margin-bottom: 16px;
+  margin-top:  16px;
+}
 .carousel-content {
   position: absolute;
   bottom: 30%;
@@ -30,11 +33,13 @@ a:hover {
 }
 
 .card-text {
+  padding: 15px 20px;
   #price {
     position: absolute;
-    bottom: 2px;
-    right: 12px;
+    bottom: 15px;
+    right: 15px;
     font-weight: bold;
+    font-size: 1.2em;
   }
 
   .margin-zero img {

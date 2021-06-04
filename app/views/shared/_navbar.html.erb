@@ -26,12 +26,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+      
         <% if current_user.offers > 0 %>
           <li class="nav-item dropdown">
             <%= link_to pluralize(current_user.offers,'Offer'),profile_path, class: "btn btn-custom" %>
           </li>
         <% end %>
         <li class="nav-item active">
+
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
 
