@@ -20,9 +20,9 @@
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap; ">
 <% @treehouses.each do |treehouse| %>
 <%= link_to treehouse_path(treehouse) do %>
-<div class="card margin-zero" style="width: 520px; height: 400px; background-color: white; border-radius: 4px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);">
+<div class="card margin-zero" style="width: 520px; height: 400px; background-color: white; border-radius: 4px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);">
   <%= cl_image_tag treehouse.photo.key, height: 240 %>
-  <div class="pl-2 pt-2 card-text hover-underline" style="color:black; text-decoration: none;">
+  <div class="card-text hover-underline" style="color:black; text-decoration: none;">
     <div style="display: flex; justify-content: space-between;">
       <h4 style="font-weight: bold"><%= treehouse.name %></h4>
       <p class="pr-2"><i class="fas fa-map-marker-alt">&nbsp;</i><%= treehouse.location %></p>
