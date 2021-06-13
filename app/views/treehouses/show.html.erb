@@ -5,7 +5,7 @@
     <h1><%= @treehouse.name %></h1>
   </div>
   <div class="row show-row">
-    <div class="col-5 col-text">
+    <div class="col-md-5 col-sm-12 col-text">
       <p><%= @treehouse.description %></p>
       <p><%= icon('fas', 'map-marker-alt') %> <%= @treehouse.location %></p>
       <p><b><%= icon('fas', 'tag') %> Price per night: </b>£<%= @treehouse.price %></p>
@@ -18,20 +18,23 @@
         <%= f.input :total_price, as: :hidden %>
         <p id="price-p-night"><%= (@treehouse.price) %></p>
         <p class="tPrice">Total Price: £<span id="total-price"></span> </p>
-        <%= f.button :submit, "Book Your Stay", class: 'btn btn-success'%>
+        <% if user_signed_in? %>
+          <%= f.button :submit, "Book Your Stay", class: 'btn btn-success'%>
+        <% else %>
+          <%= link_to "Sign in to book", new_user_session_path, class: 'btn btn-success'%>
+        <% end %>
         </div>
       <% end %>
     </div>
-    <div class="col-5 col-img">
+    <div class="col-md-5 col-sm-12 col-img">
       <% if @treehouse.photo.attached? %>
         <%= cl_image_tag @treehouse.photo.key, class:"show-img" %>
       <% else %>
         <%= image_tag "main-treehouse.jpg", alt: "treehouse", class:"show-img" %>
       <% end %>
-  </div>
+    </div>
     <div class="container my-1 p-3 d-flex justify-content-center">
     <div id="map"
-      style="width: 80%; height: 400px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>

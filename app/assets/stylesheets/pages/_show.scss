@@ -16,7 +16,7 @@
 }
 .show-img {
   max-height: 400px;
-  max-width: 400px;
+  max-width: 420px;
   border-radius: 4px;
 }
 
@@ -27,6 +27,7 @@
 .col-text {
   text-align: left;
   padding-left: 32px;
+  padding-bottom: 20px;
 }
 
 .book-form {
@@ -41,4 +42,37 @@
 .btn-success {
   padding: 5px 10px;
   font-weight: bold;
+}
+
+#map {
+  width: 80%;
+  height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .book-form {
+    flex-direction: column;
+  }
+  .show-img {
+    max-height: 300px;
+    max-width: 280px;
+  }
+  .col-img {
+    text-align: center;
+    padding: 0;
+  }
+  .show-row {
+    padding: 30px 2px;
+    margin: 3px;
+  }
+  #map {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+  .show-img {
+    max-height: 300px;
+    max-width: 385px;
+  }
 }

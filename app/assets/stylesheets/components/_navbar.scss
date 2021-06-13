@@ -1,8 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  // padding-left: 2vw;
-  // padding-right: 2vw;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 0px 2px;
   width: 100%;
 }
@@ -23,20 +21,17 @@
   background-color: rgb(255, 255, 255);
 }
 
-
 .btn-custom {
   background-color: $coral;
   border: solid 1px white;
   color: white;
-  }
-  .btn-custom:hover {
-    background-color: #d08a88;
-    border: solid 1px white;
-    color: white;
-  }
-
-.navbar-brand {
-font-family: 'Montserrat', sans-serif;
+}
+.btn-custom:hover {
+  background-color: #d08a88;
+  border: solid 1px white;
+  color: white;
 }
 
-
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+}
