@@ -11,7 +11,6 @@ const formLogic = () => {
     let dateOut = "";
     let finalPrice = 0;
 
-
     checkIn.addEventListener('blur', (event) => {
       checkIn = event.target.value.toString().split('-');
       dateIn = new Date(checkIn[0], checkIn[1]-1, checkIn[2]);
@@ -28,7 +27,6 @@ const formLogic = () => {
       
       console.log(totalP)
     });
-
   }
 }
 
